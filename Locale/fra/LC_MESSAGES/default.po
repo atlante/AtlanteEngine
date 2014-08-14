@@ -1,0 +1,166 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-07-03 22:29+0200\n"
+"PO-Revision-Date: 2014-07-03 22:35+0100\n"
+"Last-Translator: agentcobra <agentcobra@free.fr>\n"
+"Language-Team: A.B.Chatignon <EMAIL@ADDRESS>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: Controller/PlayersController.php:35
+msgid "Your journey is nearing its end. It was uneventful."
+msgstr "Votre voyage touche à sa fin. Le trajet s'est déroulé sans anicroche."
+
+#: Controller/PlayersController.php:71
+msgid "Invalid player"
+msgstr "Cette personne n'existe pas ou a été modifié."
+
+#: Controller/PlayersController.php:84
+msgid "No players found"
+msgstr "Aucun personnage n'a été trouvé."
+
+#: Controller/UsersController.php:44
+msgid "Welcome, "
+msgstr "Bienvenu(e),"
+
+#: Controller/UsersController.php:47
+msgid "Invalid username or password, try again"
+msgstr ""
+"L'identifiant ou le mot de passe que vous avez entré n'est pas reconnu, "
+"veuillez recommencer."
+
+#: Controller/UsersController.php:64;85;106
+msgid "Invalid user"
+msgstr "Cette personne n'existe pas ou a été modifié."
+
+#: Controller/UsersController.php:73;89
+msgid "The user has been saved"
+msgstr "Cette personne a bien été enregistré."
+
+#: Controller/UsersController.php:77;93
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+"Nous n'avons pas pu enregistrer ce nom d'utilisateur, veuillez recommencer."
+
+#: Controller/UsersController.php:109
+msgid "User deleted"
+msgstr "Cette personne a bien été supprimée."
+
+#: Controller/UsersController.php:112
+msgid "User was not deleted"
+msgstr "Cette personne n'a pas été supprimée."
+
+#: View/Elements/auth.ctp:8
+msgid "username"
+msgstr "identifiant"
+
+#: View/Elements/auth.ctp:9
+msgid "password"
+msgstr "mot de passe"
+
+#: View/Elements/auth.ctp:12
+msgid "Enter in %s"
+msgstr "Se connecter sur %s"
+
+#: View/Elements/auth.ctp:14
+msgid "Register"
+msgstr "Inscription"
+
+#: View/Elements/menu.ctp:17
+msgid "Help"
+msgstr "Aide"
+
+#: View/Elements/menu.ctp:19 View/Players/listing.ctp:2
+msgid "Players list"
+msgstr "Liste de joueur"
+
+#: View/Elements/menu.ctp:24 View/Posts/index.ctp:2
+msgid "News from %s"
+msgstr "News de %s"
+
+#: View/Elements/menu.ctp:26
+msgid "Tchat"
+msgstr "Tchat"
+
+#: View/Elements/menu.ctp:33 View/fra/Pages/about.ctp:2
+msgid "About"
+msgstr "À propos"
+
+#: View/Elements/menu.ctp:44 View/Elements/game/menu.ctp:47
+msgid "Play"
+msgstr "Jouer"
+
+#: View/Elements/menu.ctp:45 View/Elements/game/menu.ctp:48
+msgid "logout"
+msgstr "Se déconnecter"
+
+#: View/Players/game_speak.ctp:2;8 View/Scenes/game_index.ctp:72
+msgid "Speak"
+msgstr "Parler"
+
+#: View/Players/game_speak.ctp:6
+#, fuzzy
+msgid "Players"
+msgstr "Liste de joueur"
+
+#: View/Players/select.ctp:2
+msgid "Select your player"
+msgstr "Choisissez votre personnage."
+
+#: View/Players/select.ctp:8
+msgid "%s's players"
+msgstr "Les personnages de %s"
+
+#: View/Players/select.ctp:11
+msgid "Press to play"
+msgstr "Cliquer pour jouer"
+
+#: View/Users/add.ctp:4
+msgid "Add User"
+msgstr "Ajoutez un utilisateur."
+
+#: View/Users/add.ctp:14
+msgid "Submit"
+msgstr "Soumettre"
+
+#: Model/Player.php:validation for field name
+msgid "A player is required"
+msgstr "Il faut sélectionner un personnage."
+
+#: Model/User.php:validation for field username
+msgid "A username is required"
+msgstr "Il faut rentrer un identifiant."
+
+#: Model/User.php:validation for field password
+msgid "A password is required"
+msgstr "Il faut rentrer un mot de passe."
+
+#: Model/User.php:validation for field role
+msgid "Please enter a valid role"
+msgstr "Veuillez entrer un rôle valide."
+
+#~ msgid "News from "
+#~ msgstr "News de"
+
+#~ msgid "Shout"
+#~ msgstr "Crier"
+
+#~ msgid "Search"
+#~ msgstr "Fouiller"
+
+#~ msgid "Attack"
+#~ msgstr "Attaquer"
+
+#~ msgid "Steal"
+#~ msgstr "Voler"
+
+#~ msgid "A view block with the name '%s' is already/still open."
+#~ msgstr "Un bloc contenant le nom '%s' est déjà ouvert."

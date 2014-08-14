@@ -1,0 +1,114 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-06-01 11:06+0000\n"
+"PO-Revision-Date: 2014-06-01 13:35+0100\n"
+"Last-Translator: \n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.5\n"
+
+#: Controller/UsersController.php:42
+msgid "Welcome, "
+msgstr "Bienvenido,"
+
+#: Controller/UsersController.php:45
+msgid "Invalid username or password, try again"
+msgstr "Nombre de usuario o contraseña no válidos, vuelva a intentarlo."
+
+#: Controller/UsersController.php:61;82;103
+msgid "Invalid user"
+msgstr "Esta persona no existe."
+
+#: Controller/UsersController.php:70;86
+msgid "The user has been saved"
+msgstr "Esta persona ha sido registrada."
+
+#: Controller/UsersController.php:74;90
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+"No hemos sido capaces de registrar este nombre de usuario, por favor, "
+"inténtelo de nuevo."
+
+#: Controller/UsersController.php:106
+msgid "User deleted"
+msgstr "Esta persona ha sido eliminado."
+
+#: Controller/UsersController.php:109
+msgid "User was not deleted"
+msgstr "Esta persona no ha sido eliminado."
+
+#: View/Elements/auth.ctp:8
+msgid "username"
+msgstr "Nombre de usuario"
+
+#: View/Elements/auth.ctp:9
+msgid "password"
+msgstr "Contraseña"
+
+#: View/Elements/auth.ctp:12
+msgid "Enter in %s"
+msgstr "Entrar en %s"
+
+#: View/Elements/auth.ctp:14
+msgid "Register"
+msgstr "Crear una cuenta nueva"
+
+#: View/Elements/menu.ctp:17
+msgid "Help"
+msgstr "Ayuda"
+
+#: View/Elements/menu.ctp:18
+msgid "Players list"
+msgstr "Lista de jugadores"
+
+#: View/Elements/menu.ctp:19 View/News/index.ctp:2
+msgid "News from "
+msgstr "Escrito por"
+
+#: View/Elements/menu.ctp:20
+msgid "About"
+msgstr "Acerca de"
+
+#: View/Elements/menu.ctp:29
+msgid "Play"
+msgstr "Juego"
+
+#: View/Elements/menu.ctp:29
+msgid "logout"
+msgstr "Desconectar"
+
+#: View/Players/game_select.ctp:3
+msgid "Select your player"
+msgstr "Elige tú Personaje"
+
+#: View/Players/game_select.ctp:4
+msgid "Press to play"
+msgstr "Juego"
+
+#: View/Users/add.ctp:4
+msgid "Add User"
+msgstr "Añadir usuario"
+
+#: View/Users/add.ctp:14
+msgid "Submit"
+msgstr "Enviar"
+
+#: Model/User.php:validation for field username
+msgid "A username is required"
+msgstr "Debe ingresar un nombre de usuario"
+
+#: Model/User.php:validation for field password
+msgid "A password is required"
+msgstr "Debe introducir una contraseña."
+
+#: Model/User.php:validation for field role
+msgid "Please enter a valid role"
+msgstr "Por favor, introduzca un papel válido"
