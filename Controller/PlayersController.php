@@ -27,11 +27,19 @@ App::uses('AppController', 'Controller');
 class PlayersController extends AppController {
 
   public function game_move($destination) {
+    $this->loadModel('Scene');
+    $destination = $this->Scene->findById($destination);
     $this->Player->id = $this->Session->read('Player.id');
 
-    $this->Player->saveField('scene_id', $destination);
-    $this->log('Déplacement de ' . $this->Player->id . ' ' . $this->Session->read('Player.scene_id') . '=>' . $destination, 'activity');
-    $this->Session->write('Player.scene_id', $destination);
+    $this->log('Déplacement de ' . $this->Player->id . ' ' . $this->Session->read('Player.scene_id') . '=>' . $destination['Scene']['name'] . '(' . $destination['Scene']['id'] . ')', 'activity');
+    $this->Player->saveField('scene_id', $destination['Scene']['id']);
+    $this->Session->write('Player.scene_id', $destination['Scene']['id']);
+
+    $this->loadModel('Fa');
+    $this->Fa->set('player_id', $this->Session->read('Player.id'));
+    $this->Fa->set('content', 'D\'un pas nonchalant, vous vous rendez à <span class="fa-scene">' . $destination['Scene']['name'] . '</span>.');
+    $this->Fa->save();
+
     $this->Session->setFlash(__('Your journey is nearing its end. It was uneventful.'));
     $this->redirect(['controller' => 'scenes']);
   }
@@ -46,16 +54,16 @@ class PlayersController extends AppController {
 
   public function game_speak() {
     if ($this->request->is('post')) {
-      $player = $this->Player->find('first', [ 'conditions' => array('Player.id' => $this->request->data['Player']['player_id'])]);
+      $player = $this->Player->find('first', ['conditions' => array('Player.id' => $this->request->data['Player']['player_id'])]);
       $this->loadModel('Fa');
       $transaction = $this->Fa->getDataSource();
       try {
         $transaction->begin();
-        //to
+//to
         $faMsg = '***** Message envoyé de <span class="fa-pseudo">' . $this->Session->read('Player.name') . '</span> ******<br>';
         $faMsg.=$this->request->data['Player']['content'];
         $this->Fa->save(['Fa' => ['player_id' => $this->request->data['Player']['player_id'], 'content' => $faMsg]]);
-        //from
+//from
         $faMsg = '***** Message envoyé à <span class="fa-pseudo">' . $player['Player']['name'] . '</span> ******<br>';
         $faMsg.=$this->request->data['Player']['content'];
         $this->Fa->create();
@@ -69,7 +77,18 @@ class PlayersController extends AppController {
         echo $exc->getTraceAsString();
       }
     }
-    $this->set('players', $this->Player->find('list'));
+    if (is_int($this->request->params['pass'][0])) {
+      $this->Player->id = $this->request->params['pass'][0];
+    }
+    $this->set('players', $this->Player->find('list', array(
+                'conditions' => [
+                    'Player.scene_id' => $this->Session->read('Player.scene_id'),
+                    'NOT' => [
+                        'Player.id' => $this->Session->read('Player.id')
+                    ]
+                ]
+                    )
+    ));
   }
 
   public function add() {
@@ -113,6 +132,9 @@ class PlayersController extends AppController {
         'fields' => array('Player.id', 'Player.name'),
         'conditions' => array('Player.user_id =' => AuthComponent::user('id'))
     ]);
+    foreach ($players as $id => $player) {
+      $players[$id] = '<img class="img-circle img-responsive" src="http://robohash.org/' . $player . '?set=set1&amp;size=100x100"><small class="text-center text-muted">' . $player . '</small>';
+    }
     if ($players) {
       $this->set('players', $players);
     } else {

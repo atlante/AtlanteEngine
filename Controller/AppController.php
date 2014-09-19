@@ -111,6 +111,9 @@ class AppController extends Controller {
       // e.g. use /app/View/fra/Pages/tos.ctp instead of /app/View/Pages/tos.ctp
       $this->viewPath = $locale . DS . $this->viewPath;
     }
+    if ($this->request->is('ajax')) {
+      $this->layout = 'ajax';
+    }
   }
 
   public function isAuthorized($user = null) {

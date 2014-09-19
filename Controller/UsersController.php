@@ -34,6 +34,14 @@ class UsersController extends AppController {
     $this->Auth->allow('logout');
   }
 
+  public function listing() {
+    $this->set('users', $this->User->find('list', [
+                'fields' => array('User.id', 'User.username'),
+                'order' => array('User.username ASC'),
+                    //'group' => array('User.role')
+    ]));
+  }
+
   public function login() {
     //if already logged-in, redirect
     if ($this->Session->check('Auth.User')) {

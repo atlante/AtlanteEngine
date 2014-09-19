@@ -26,11 +26,24 @@ App::uses('AppController', 'Controller');
  */
 class FasController extends AppController {
 
+  public function beforeFilter() {
+    parent::beforeFilter();
+  }
+
   public function show() {
-    $fa = $this->Fa->find('all', [
-        'conditions' => array('Fa.player_id' => $this->Session->read('Player.id')),
-        'order' => array('Fa.created DESC')
-    ]);
+    $this->paginate = array('Fa' => array(
+            'limit' => 20,
+            'conditions' => array('Fa.player_id' => $this->Session->read('Player.id')),
+            'order' => array(
+                'Fa.created' => 'desc'
+            )
+    ));
+    $fa = $this->paginate('Fa');
+//    $fa = $this->Fa->find('all', [
+//        'conditions' => array('Fa.player_id' => $this->Session->read('Player.id')),
+//        'order' => array('Fa.created DESC')
+//    ]);
+
     if ($fa) {
       return $fa;
     } else {
