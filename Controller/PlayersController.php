@@ -95,12 +95,12 @@ class PlayersController extends AppController {
             $transaction = $this->Fa->getDataSource();
             try {
                 $transaction->begin();
-//to
-                $faMsg = '***** Message envoyé de <span class="fa-pseudo">' . $this->Session->read('Player.name') . '</span> ******<br>';
+//from
+                $faMsg = ' &diams; Message envoyé de <span class="fa-pseudo" style="color:' . $this->Session->read('Player.color') . ';">' . $this->Session->read('Player.name') . '</span> &diams;<br>';
                 $faMsg.=$this->request->data['Player']['content'];
                 $this->Fa->save(['Fa' => ['player_id' => $this->request->data['Player']['player_id'], 'content' => $faMsg]]);
-//from
-                $faMsg = ' &diams; Message envoyé à <span class="fa-pseudo">' . $player['Player']['name'] . '</span> &diams;<br>';
+//to
+                $faMsg = ' &diams; Message envoyé à <span class="fa-pseudo" style="color:' . $player['Player']['color'] . ';">' . $player['Player']['name'] . '</span> &diams;<br>';
                 $faMsg.=$this->request->data['Player']['content'];
                 $this->Fa->create();
                 $this->Fa->save(['Fa' => ['player_id' => $this->Session->read('Player.id'), 'content' => $faMsg]]);
