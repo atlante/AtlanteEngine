@@ -35,3 +35,11 @@ Les graphismes livrés avec le jeu sont tous l'oeuvre de Kuro, les droits de ces
 | Agentcobra | Le codeur |
 | A.B.Chatignon | Le directeur artistique |
 | Kuro | Le Community Manager et Graphiste |
+
+---
+
+Vous pouvez nous aider de plusieurs manières :
+- en parlant du projet sur tous les réseaux sociaux
+- en regardant la TODO liste https://trello.com/b/gliWiAR0
+- en codant PHP ou en design pour les thèmes en HTML et CSS
+- traduire (bientôt)
