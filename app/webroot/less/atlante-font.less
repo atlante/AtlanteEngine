@@ -1,0 +1,50 @@
+//
+// Glyphicons for Bootstrap
+//
+// Since icons are fonts, they can be placed anywhere text is placed and are
+// thus automatically sized to match the surrounding child. To use, create an
+// inline element with the appropriate classes, like so:
+//
+// <a href="#"><span class="glyphicon glyphicon-star"></span> Star</a>
+
+//-- Iconography
+//
+//## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
+
+@icon-font-path:          "../fonts/";
+@icon-font-name:          "Atlante-Icon";
+@icon-font-svg-id:        "Atlante-Icon";
+
+// Import the fonts
+@font-face {
+    font-family: 'Atlante-Icon';
+    src: ~"url('@{icon-font-path}@{icon-font-name}.eot')";
+    src: ~"url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype')",
+        ~"url('@{icon-font-path}@{icon-font-name}.woff') format('woff')",
+        ~"url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype')",
+        ~"url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-svg-id}') format('svg')";
+}
+
+// Catchall baseclass
+.atlante {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Atlante-Icon';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.atlante-money                     { &:after { content: "\20AC"; padding-left: 10px; } }
+
+// Individual icons
+.atlante-sword                     { &:before { content: "\41"; } }
+.atlante-swords                    { &:before { content: "\42"; } }
+.atlante-kuro                      { &:before { content: "\43"; } }
+.atlante-sword-black               { &:before { content: "\44"; } }
+.atlante-agentcobra                { &:before { content: "\45"; } }
+.atlante-forge                     { &:before { content: "\46"; } }
+

@@ -26,13 +26,15 @@ App::uses('AppController', 'Controller');
  */
 class FasController extends AppController {
 
+    public $components = array('Paginator');
+	
   public function beforeFilter() {
     parent::beforeFilter();
   }
 
   public function show() {
     $this->paginate = array('Fa' => array(
-            'limit' => 20,
+            'limit' => 500,
             'conditions' => array('Fa.player_id' => $this->Session->read('Player.id')),
             'order' => array(
                 'Fa.created' => 'desc'

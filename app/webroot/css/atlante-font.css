@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Atlante-Icon';
+  src: url('../fonts/Atlante-Icon.eot');
+  src: url('../fonts/Atlante-Icon.eot?#iefix') format('embedded-opentype'), url('../fonts/Atlante-Icon.woff') format('woff'), url('../fonts/Atlante-Icon.ttf') format('truetype'), url('../fonts/Atlante-Icon.svg#Atlante-Icon') format('svg');
+}
+/* line 29, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000329}}
+.atlante {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Atlante-Icon';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* line 41, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000341}}
+.atlante-money:after {
+  content: "\20AC";
+  padding-left: 2px;
+}
+/* line 44, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000344}}
+.atlante-sword:before {
+  content: "\41";
+}
+/* line 45, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000345}}
+.atlante-swords:before {
+  content: "\42";
+}
+/* line 46, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000346}}
+.atlante-kuro:before {
+  content: "\43";
+}
+/* line 47, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000347}}
+.atlante-sword-black:before {
+  content: "\44";
+}
+/* line 48, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000348}}
+.atlante-agentcobra:before {
+  content: "\45";
+}
+/* line 49, C:\wamp\www\altergi\app\webroot\less\atlante-font.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/wamp\/www\/altergi\/app\/webroot\/less\/atlante-font\.less}line{font-family:\0000349}}
+.atlante-forge:before {
+  content: "\46";
+}

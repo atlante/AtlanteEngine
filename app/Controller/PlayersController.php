@@ -177,11 +177,11 @@ class PlayersController extends AppController {
             $this->redirect(['controller' => 'scenes', 'action' => 'index', 'game' => true]);
         }
         $playerslist = $this->Player->find('all', [
-            'fields' => array('Player.id', 'Player.name', 'Player.color', 'Player.picture'),
+            'fields' => array('Player.id', 'Player.name', 'Player.color', 'Player.picture', 'Player.scene_id','Player.pa'),
             'conditions' => array('Player.user_id =' => AuthComponent::user('id'))
         ]);
         foreach ($playerslist as $player) {
-            $players[$player['Player']['id']] = '<img class="img-circle img-responsive" src="' . $player['Player']['picture'] . '"><small class="text-center text-muted" style="color:' . $player['Player']['color'] . ';">' . $player['Player']['name'] . '</small>';
+            $players[$player['Player']['id']] = '<img class="img-circle img-responsive" src="' . $player['Player']['picture'] . '"><small class="text-center text-muted" style="color:' . $player['Player']['color'] . ';">' . $player['Player']['name'] . '</small>'. '<span class="fa-scene">  ('. $player['Player']['scene_id'] . ')</span>'. '<span class="badge-pa pull-right">'. $player['Player']['pa'] . '</span>';
         }
         if ($playerslist) {
             $this->set('players', $players);

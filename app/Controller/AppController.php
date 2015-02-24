@@ -63,10 +63,14 @@ class AppController extends Controller {
               'fr' => 'fra'
           ),
       ),
-      'Cookie', 'DebugKit.Toolbar');
-  public $helpers = array('Cache', 'Form' => ['className' => 'BootstrapForm.BootstrapForm'], 'Html', 'Paginator', 'Session', 'Ofbid.Ofbid');
-
+      'Cookie','RequestHandler');
+  public $helpers = array('Cache', 'Form' => ['className' => 'BootstrapForm.BootstrapForm'], 'Html', 'Js', 
+  'Paginator'=>array(
+    'update' => '#content',
+    'evalScripts' => true
+), 'Session', 'Ofbid.Ofbid');
 //public $helpers = array('Less.Less');
+
   public function beforeFilter() {
     if (isset($this->request->params['prefix'])) {
       switch ($this->request->params['prefix']) {

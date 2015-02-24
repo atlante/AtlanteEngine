@@ -31,7 +31,7 @@ class UsersController extends AppController {
   public function beforeFilter() {
     parent::beforeFilter();
     // Allow users to register and logout.
-    $this->Auth->allow('logout');
+    $this->Auth->allow(['logout','add']);
   }
 
   public function listing() {
@@ -153,7 +153,7 @@ class UsersController extends AppController {
         $this->Session->setFlash(__('Your settings has been updated.'));
         return $this->redirect(['action' => 'settings']);
       }
-      $this->Session->setFlash(__('Unable to update your post.'));
+      $this->Session->setFlash(__('Unable to update your settings.'));
     }
     if (!$this->request->data) {
       $this->request->data = $this->User->findById($this->Session->read('Auth.User.id'));
