@@ -1,6 +1,9 @@
-[submodule "app/Plugin/DebugKit"]
+[submodule "DebugKit"]
 	path = app/Plugin/DebugKit
 	url = https://github.com/cakephp/debug_kit.git
-[submodule "app/Plugin/Localized"]
+[submodule "Localized"]
 	path = app/Plugin/Localized
 	url = https://github.com/cakephp/localized.git
+[submodule "cakephp-scaffold-bootstrap3"]
+	path = app
+	url = https://github.com/xv1t/cakephp-scaffold-bootstrap3.git

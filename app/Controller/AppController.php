@@ -32,107 +32,108 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 
-  public $scaffold = 'admin';
-  public $components = array(
-      'Session',
-      'Auth' => array(
-          'loginAction' => array(
-              'controller' => 'users',
-              'action' => 'login',
-              'admin' => false
-          ),
-          'loginRedirect' => array(
-              'game' => true,
-              'controller' => 'players',
-              'action' => 'select'
-          ),
-          'logoutRedirect' => array(
-              'controller' => 'pages',
-              'action' => 'display',
-              'home'
-          ),
-          'authorize' => 'Controller',
-          'authenticate' => array(
-              'Form' => array(
-                  'scope' => array('User.active' => 1)
-              )
-          )
-      ), 'Language' => array(
-          'supportedLanguages' => array(
-              'en' => 'eng',
-              'fr' => 'fra'
-          ),
-      ),
-      'Cookie','RequestHandler');
-  public $helpers = array('Cache', 'Form' => ['className' => 'BootstrapForm.BootstrapForm'], 'Html', 'Js', 
-  'Paginator'=>array(
-    'update' => '#content',
-    'evalScripts' => true
-), 'Session', 'Ofbid.Ofbid');
+    public $scaffold = 'admin';
+    public $components = array(
+        'Session',
+        'Auth' => array(
+            'loginAction' => array(
+                'controller' => 'users',
+                'action' => 'login',
+                'admin' => false
+            ),
+            'loginRedirect' => array(
+                'game' => true,
+                'controller' => 'players',
+                'action' => 'select'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'display',
+                'home'
+            ),
+            'authorize' => 'Controller',
+            'authenticate' => array(
+                'Form' => array(
+                    'scope' => array('User.active' => 1)
+                )
+            )
+        ), 'Language' => array(
+            'supportedLanguages' => array(
+                'en' => 'eng',
+                'fr' => 'fra'
+            ),
+        ),
+        'Cookie', 'RequestHandler');
+    public $helpers = array('Cache', 'Form' => ['className' => 'BootstrapForm.BootstrapForm'], 'Html', 'Js',
+        'Paginator' => array(
+            'update' => '#content',
+            'evalScripts' => true
+        ), 'Session', 'Ofbid.Ofbid');
+
 //public $helpers = array('Less.Less');
 
-  public function beforeFilter() {
-    if (isset($this->request->params['prefix'])) {
-      switch ($this->request->params['prefix']) {
-        case 'admin':
-          $this->layout = 'admin';
-          break;
-        case 'game':
-          $this->layout = 'game';
-          break;
-        default:
-          $this->layout = 'default';
-          break;
-      }
+    public function beforeFilter() {
+        if (isset($this->request->params['prefix'])) {
+            switch ($this->request->params['prefix']) {
+                case 'admin':
+                    $this->layout = 'admin';
+                    break;
+                case 'game':
+                    $this->layout = 'game';
+                    break;
+                default:
+                    $this->layout = 'default';
+                    break;
+            }
+        }
+
+        //si utilisateur connecté
+        if (!is_null(AuthComponent::user('id'))) {
+            switch (AuthComponent::user('id')) {
+                case 1:
+                    Configure::write('Config.language', 'eng');
+                    break;
+                case 2:
+                    Configure::write('Config.language', 'fra');
+                    break;
+                case 3:
+                    //Configure::write('Config.language', 'spa');
+                    break;
+                default:
+                    $this->theme = Configure::read('Game.theme');
+                    break;
+            }
+            if (!is_null($this->Session->read('Auth.User.theme'))) {
+                //debug('custom: ' . $this->Session->read('Auth.User.theme'));
+                $this->theme = $this->Session->read('Auth.User.theme');
+            }
+        } else {
+            $this->theme = Configure::read('Game.theme');
+        }
+        //recherche si traduction longue dispo
+        $locale = Configure::read('Config.language');
+        if ($locale && file_exists(APP . 'View' . DS . $locale . DS . $this->viewPath)) {
+            // e.g. use /app/View/fra/Pages/tos.ctp instead of /app/View/Pages/tos.ctp
+            $this->viewPath = $locale . DS . $this->viewPath;
+        }
+        if ($this->request->is('ajax')) {
+            $this->layout = 'ajax';
+        }
     }
 
-    //si utilisateur connecté
-    if (!is_null(AuthComponent::user('id'))) {
-      switch (AuthComponent::user('id')) {
-        case 2:
-          $this->theme = 'kuro';
-          Configure::write('Config.language', 'fra');
-
-          break;
-        case 3:
-          $this->theme = 'kuro';
-          //Configure::write('Config.language', 'spa');
-          break;
-        default:
-          $this->theme = Configure::read('Game.theme');
-          break;
-      }
-      if (!is_null($this->Session->read('Auth.User.theme'))) {
-        //debug('custom: ' . $this->Session->read('Auth.User.theme'));
-        $this->theme = $this->Session->read('Auth.User.theme');
-      }
-    } else {
-      $this->theme = Configure::read('Game.theme');
-    }
-    //recherche si traduction longue dispo
-    $locale = Configure::read('Config.language');
-    if ($locale && file_exists(APP . 'View' . DS . $locale . DS . $this->viewPath)) {
-      // e.g. use /app/View/fra/Pages/tos.ctp instead of /app/View/Pages/tos.ctp
-      $this->viewPath = $locale . DS . $this->viewPath;
-    }
-    if ($this->request->is('ajax')) {
-      $this->layout = 'ajax';
-    }
-  }
-
-  public function isAuthorized($user = null) {
+    public function isAuthorized($user = null) {
 // Any registered user can access public functions
-    if (empty($this->request->params['admin'])) {
-      return true;
-    }
+        if (empty($this->request->params['admin'])) {
+            return true;
+        }
 
 // Only admins can access admin functions
-    if (isset($this->request->params['admin'])) {
-      return (bool) ($user['role'] === 'admin');
-    }
+        if (isset($this->request->params['admin'])) {
+            return (bool) ($user['role'] === 'admin');
+        }
 
 // Default deny
-    return false;
-  }
+        return false;
+    }
 
 }
