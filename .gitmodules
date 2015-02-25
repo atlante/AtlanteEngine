@@ -1,9 +1,11 @@
-[submodule "DebugKit"]
-	path = app/Plugin/DebugKit
+[submodule "Plugin/DebugKit"]
+	path = Plugin/DebugKit
 	url = https://github.com/cakephp/debug_kit.git
-[submodule "Localized"]
-	path = app/Plugin/Localized
+[submodule "Plugin/Localized"]
+	path = Plugin/Localized
 	url = https://github.com/cakephp/localized.git
 [submodule "cakephp-scaffold-bootstrap3"]
 	path = app
 	url = https://github.com/xv1t/cakephp-scaffold-bootstrap3.git
+[submodule "Plugin/Ofbid"]
+	url = https://github.com/OverFlow636/Ofbid.git
