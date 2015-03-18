@@ -5,7 +5,7 @@
 <img src="/altergi/img/atlante.png" alt="Atlante" style="border:0">
 <p>Le moteur de jeu Atlante est un moteur gratuit et libre permettant de lancer votre propre jeu de role PHP sur internet.</p>
 <p>Vous pouvez le télécharger à l'adresse suivante :
-  <?php echo $this->Html->link('https://github.com/agentcobra/atlante/'); ?>, ensuite, libre à vous de le modifier pour correspondre a vos goûts.</p>
+  <?php echo $this->Html->link('http://atlante.github.io/AtlanteEngine/'); ?>, ensuite, libre à vous de le modifier pour correspondre a vos goûts.</p>
 <p>Ce programme a entierement été programmé par
   <?php echo $this->Html->link('agentcobra', 'mailto:agentcobra@users.noreply.github.com', null, 'merci de ne pas envoyer de spam') ?>
   en utilisant le framework <?php echo $this->Html->link('CakePHP', 'http://cakephp.org') ?> en réutilisant les idées de
@@ -21,11 +21,11 @@
 <div class="row">
   <div class="col-sm-6 col-md-4">
     <div class="thumbnail">
-      <?php echo $this->Html->image('http://cdn.libravatar.org/avatar/ffe0cd6e04563ae6f31327fe4b113055?s=300', ['alt' => 'Kuro', 'class' => 'img-thumbnail']) ?>
+      <?php echo $this->Html->image('http://cdn.libravatar.org/avatar/5d52a8e3691c2b84bb44ed6e9d6ec54e?s=300', ['alt' => 'A.B.Chatignon', 'class' => 'img-thumbnail']) ?>
       <div class="caption">
-        <h3>Kuro</h3>
+        <h3>A.B.Chatignon</h3>
         <p>...</p>
-        <span class="badge">Le directeur de MK Project</span><span class="badge">Le Community Manager</span> <span class="badge">Le directeur artistique</span>
+        <span class="badge">Le directeur du projet</span> <span class="badge">Le scénariste d'altergi</span>
       </div>
     </div>
   </div>
@@ -36,6 +36,16 @@
         <h3>Agentcobra</h3>
         <p>...</p>
         <span class="badge">Le codeur</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <?php echo $this->Html->image('http://cdn.libravatar.org/avatar/ffe0cd6e04563ae6f31327fe4b113055?s=300', ['alt' => 'Kuro', 'class' => 'img-thumbnail']) ?>
+      <div class="caption">
+        <h3>Kuro</h3>
+        <p>...</p>
+        <span class="badge">Le directeur de MK Project</span> <span class="badge">Le Community Manager</span> <span class="badge">Le directeur artistique</span>
       </div>
     </div>
   </div>
