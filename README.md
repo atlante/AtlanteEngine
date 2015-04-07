@@ -10,7 +10,7 @@ Convention de codage : http://mdo.github.io/code-guide/
 ##Annuaire des sites utilisant AtlanteEngine
 ![QRcode](http://i.imgur.com/UsuH3Mt.png "QRcode")
 
-[Sites utilisant le moteur atlante](http://agentcobra.hd.free.fr/atlante/ "lien temporaire")
+[Sites utilisant le moteur atlante](http://agentcobra.hd.free.fr/atlante_annuaire/ "lien temporaire")
 
 note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir les milestones)
 * * *
@@ -19,7 +19,7 @@ note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir 
 
 Le moteur de jeu Atlante est un moteur gratuit et libre permettant de lancer votre propre jeu de role PHP sur internet.
 
-Vous pouvez le télécharger à l'adresse suivante : https://github.com/agentcobra/atlante/, ensuite, libre à vous de le modifier pour correspondre a vos goûts.
+Vous pouvez le télécharger à l'adresse suivante : http://atlante.github.io/AtlanteEngine/, ensuite, libre à vous de le modifier pour correspondre a vos goûts.
 
 Ce programme a entierement été programmé par agentcobra en utilisant le framework CakePHP en réutilisant les idées de Talesta4 qui été programmé par Leym.
 
