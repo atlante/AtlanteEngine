@@ -1,4 +1,6 @@
 #AtlanteEngine
+
+[![Join the chat at https://gitter.im/atlante/AtlanteEngine](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/atlante/AtlanteEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Recodage de Talesta4, un moteur de jeu de rôle par navigateur ( http://www.talesta.free.fr/ )
 
 Projet d'A.B.Chatignon et agentcobra (sous licence GPLv2) avec les graphismes de kurotashi
