@@ -1,9 +1,9 @@
 {
-    "name": "cakephp/app",
-    "description": "CakePHP skeleton app",
-    "homepage": "http://cakephp.org",
+    "name": "atlante/atlanteengine",
+    "description": "Moteur de jeu de role",
+    "homepage": "http://atlante.github.io/AtlanteEngine/",
     "type": "project",
-    "license": "MIT",
+    "license": "GPLv2",
     "require": {
         "php": ">=5.4.16",
         "cakephp/cakephp": "~3.0",
