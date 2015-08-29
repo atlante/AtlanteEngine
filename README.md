@@ -12,10 +12,12 @@ Convention de codage : http://mdo.github.io/code-guide/
 ##Annuaire des sites utilisant AtlanteEngine
 ![QRcode](http://i.imgur.com/UsuH3Mt.png "QRcode")
 
-[Sites utilisant le moteur atlante](http://agentcobra.hd.free.fr/atlante_annuaire/ "lien temporaire")
+~~[Sites utilisant le moteur atlante](http://agentcobra.hd.free.fr/atlante_annuaire/ "lien temporaire")~~
 
 note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir les milestones)
 * * *
+
+<iframe src="https://discordapp.com/widget?id=87217514903269376&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 
 ##À propos
 
