@@ -1,0 +1,152 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ scene.name }}{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        body {
+            background: url({{ scene.picture }}) no-repeat center fixed;
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
+        }
+
+        .ui.segment {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+{% endblock %}
+
+
+{% block body %}
+    <!-- https://static.photocdn.pt/images/articles/2018/03/09/articles/2017_8/landscape_photography.jpg -->
+    <div class="ui raised segment">
+        <div class="ui five tiny statistics">
+            <div class="statistic">
+                <div class="value">
+                    <i class="mars icon"></i>
+                </div>
+                <div class="label">{{ player.name }}</div>
+            </div>
+            <div class="statistic">
+                <div class="value">
+                    <i class="battery full icon"></i> {{ player.AP }}
+                </div>
+                <div class="label">Points d'actions</div>
+            </div>
+            <div class="statistic">
+                <div class="value">
+                    <i class="heart icon"></i> {{ player.life }} %
+                </div>
+                <div class="label">Points de vie</div>
+            </div>
+            <div class="statistic">
+                <div class="value">
+                    <i class="bitcoin icon"></i>
+                    42
+                </div>
+                <div class="label">Gold</div>
+            </div>
+            <a class="statistic" href="{{ path('user_logout') }}">
+                <div class="value">
+                    <i class="close icon"></i>
+                </div>
+                <div class="label">
+                    Se déconnecter
+                </div>
+            </a>
+        </div>
+    </div>
+    <!--div class="ui message">
+        <i class="close icon"></i>
+        <div class="header">
+            Welcome back!
+        </div>
+        <p>This is a special notification which you can dismiss if you're bored with it.</p>
+    </div-->
+    <div class="ui two column grid container">
+        <div class="column">
+            <div class="ui segment">
+                <h2 class="ui header">Actions</h2>
+                <ul class="ui link list">
+                    <li class="item"><a href="{{ path('play') }}">Parler</a></li>
+                    <li class="item"><a href="{{ path('play') }}">Crier</a></li>
+                    <li class="item"><a href="{{ path('play') }}">Chanter</a></li>
+                    <li class="item"><a href="{{ path('user_logout') }}">Se déconnecter</a></li>
+                </ul>
+            </div>
+            <div class="ui tiny horizontal list">
+                {% for player_in_scene in scene.players %}
+                    <div class="item">
+                        <a href="{{ path('player_show', {'id': player_in_scene.id}) }}">
+                            <img class="ui avatar image" src="{{ player_in_scene.picture }}">
+                            <div class="content">
+                                <div class="header">{{ player_in_scene.name }}</div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="ui segment">
+                <h2 class="ui header">Objets</h2>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <h1 class="ui header">{{ scene.name }}</h1>
+                <p class="ui text">{{ scene.description|nl2br }}</p>
+                <h3 class="ui header">Mouvements</h3>
+                <table class="ui">
+                    <tr>
+                        <td></td>
+                        <td class="ui center aligned">
+                            <!-- N -->
+                            <ul>
+                                {% for path in paths if path.cardinal=="N" %}
+                                    <li><a href="{{ path('player_move', {'path_id': path.id}) }}">{{ path.name }}
+                                            ({{ path.cost }} PA)</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="ui center aligned">
+                            <!-- W -->
+                            <ul>
+                                {% for path in paths if path.cardinal=="W" %}
+                                    <li><a href="{{ path('player_move', {'path_id': path.id}) }}">{{ path.name }}
+                                            ({{ path.cost }} PA)</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td class="ui center aligned">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Rose_des_vents.svg/1024px-Rose_des_vents.svg.png" alt="" style="width: 100%">
+                        </td>
+                        <td class="ui center aligned">
+                            <!-- E -->
+                            <ul>
+                                {% for path in paths if path.cardinal=="E" %}
+                                    <li><a href="{{ path('player_move', {'path_id': path.id}) }}">{{ path.name }}
+                                            ({{ path.cost }} PA)</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="ui center aligned">
+                            <!-- S -->
+                            <ul>
+                                {% for path in paths if path.cardinal=="S" %}
+                                    <li><a href="{{ path('player_move', {'path_id': path.id}) }}">{{ path.name }}
+                                            ({{ path.cost }} PA)</a></li>
+                                {% endfor %}
+                            </ul>
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

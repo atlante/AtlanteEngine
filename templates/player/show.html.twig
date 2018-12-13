@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="ui container">
+        <h2 class="ui header">
+            <img src="{{ player.picture }}" class="ui circular image">
+            {{ player.name }}
+        </h2>
+        <p>{{ player.description }}</p>
+    </div>
+{% endblock %}

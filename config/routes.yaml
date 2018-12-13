@@ -1,0 +1,6 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+play:
+  path: /game
+  controller: App\Controller\PlayerController::index

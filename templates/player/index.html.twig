@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    <div class="ui container">
+        <h2 class="ui center aligned icon header">
+            <i class="circular users icon"></i>
+            Personnage
+        </h2>
+        <div class="ui middle aligned animated list">
+            {% for player in players %}
+                <a href="{{ path('player_select', {'id': player.id}) }}" class="item">
+                    <img class="ui avatar image" src="{{ player.picture }}">
+                    <div class="content">
+                        <div class="header">{{ player.name }}</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
