@@ -7,10 +7,8 @@ utilisant CakePHP : le framework de développement rapide php (Licence MIT)
 
 Convention de codage : http://mdo.github.io/code-guide/
 
-##Annuaire des sites utilisant AtlanteEngine
-![QRcode](http://i.imgur.com/UsuH3Mt.png "QRcode")
-
-[Sites utilisant le moteur atlante](http://agentcobra.hd.free.fr/atlante/ "lien temporaire")
+## Annuaire des sites utilisant AtlanteEngine
+- dev.atlante-engine.fr
 
 note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir les milestones)
 * * *
@@ -21,7 +19,7 @@ Le moteur de jeu Atlante est un moteur gratuit et libre permettant de lancer vot
 
 Vous pouvez le télécharger à l'adresse suivante : https://github.com/agentcobra/atlante/, ensuite, libre à vous de le modifier pour correspondre a vos goûts.
 
-Ce programme a entierement été programmé par agentcobra en utilisant le framework CakePHP en réutilisant les idées de Talesta4 qui été programmé par Leym.
+Ce programme a entierement été programmé par agentcobra en utilisant le framework Symfony4 en réutilisant les idées de Talesta4 qui été programmé par Leym.
 
 Ce programme n'éxisterai pas sans l'aide de A.B.Chatignon en dirigeant l'équipe Atlante
 
