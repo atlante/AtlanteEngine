@@ -1,4 +1,4 @@
-#AtlanteEngine
+# AtlanteEngine
 Recodage de Talesta4, un moteur de jeu de rôle par navigateur ( http://www.talesta.free.fr/ )
 
 Projet d'A.B.Chatignon et agentcobra (sous licence GPLv2) avec les graphismes de kurotashi
@@ -15,7 +15,7 @@ Convention de codage : http://mdo.github.io/code-guide/
 note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir les milestones)
 * * *
 
-##À propos
+## À propos
 
 Le moteur de jeu Atlante est un moteur gratuit et libre permettant de lancer votre propre jeu de role PHP sur internet.
 
@@ -29,7 +29,8 @@ Les graphismes livrés avec le jeu sont tous l'oeuvre de Kuro, les droits de ses
 
 **This work is licensed under GPLv2.**
 
-###L'équipe de développement
+### L'équipe de développement
+
 |  | Role |
 |--------|--------|
 | Agentcobra | Le codeur |
