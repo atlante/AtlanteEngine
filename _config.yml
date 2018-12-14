@@ -1,0 +1,8 @@
+title: Atlanteengine
+description: Recodage complet du moteur de jeu de rôle par navigateur Talesta4 ( http://www.talesta.free.fr/ )
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-time-machine
+
+gems:
+  - jekyll-mentions
