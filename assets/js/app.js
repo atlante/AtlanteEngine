@@ -12,4 +12,12 @@ require('../css/app.css');
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 var $ = require('jquery');
 
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+window.onload = function() {
+    if (window.jQuery) {
+        // jQuery is loaded
+        console.info("jQuery OK");
+    } else {
+        // jQuery is not loaded
+        console.error("jQuery KO");
+    }
+}

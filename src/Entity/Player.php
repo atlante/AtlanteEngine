@@ -2,6 +2,8 @@
 # ApMAX = 35 si supérieur perdu ;(
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -9,11 +11,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Player
 {
-
-    public function __toString(): string
-    {
-        return $this->name;
-    }
 
     /**
      * @ORM\Id()
@@ -33,7 +30,7 @@ class Player
     private $sexe;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $description;
 
@@ -87,6 +84,21 @@ class Player
      * @ORM\JoinColumn(nullable=false)
      */
     private $scene;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\User", inversedBy="players")
+     */
+    private $user;
+
+    public function __construct()
+    {
+        $this->user = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
+    }
 
     public function getId(): ?int
     {
@@ -245,6 +257,32 @@ class Player
     public function setScene(?Scene $scene): self
     {
         $this->scene = $scene;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|User[]
+     */
+    public function getUser(): Collection
+    {
+        return $this->user;
+    }
+
+    public function addUser(User $user): self
+    {
+        if (!$this->user->contains($user)) {
+            $this->user[] = $user;
+        }
+
+        return $this;
+    }
+
+    public function removeUser(User $user): self
+    {
+        if ($this->user->contains($user)) {
+            $this->user->removeElement($user);
+        }
 
         return $this;
     }

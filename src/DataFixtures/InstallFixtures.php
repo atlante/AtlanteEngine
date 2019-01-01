@@ -35,6 +35,7 @@ class InstallFixtures extends Fixture
         $admin->setPassword($this->encoder->encodePassword($admin, "admin"));
         $admin->setRoles("ROLE_ADMIN");
         $manager->persist($admin);
+        echo $admin->getEmail() . PHP_EOL;
 
         // on créé 10 personnes
         for ($i = 1; $i < 5; $i++) {
@@ -46,6 +47,7 @@ class InstallFixtures extends Fixture
             $user->setPassword($this->encoder->encodePassword($user, "test"));
             $user->setRoles("ROLE_USER");
             $manager->persist($user);
+            echo $user->getEmail(). PHP_EOL;
         }
 
 
@@ -123,6 +125,7 @@ class InstallFixtures extends Fixture
             $player->setIntelligence($faker->numberBetween(10, 90));
             $player->setLife(100);
             $player->setAP(35);
+            $player->addUser($admin);
             $manager->persist($player);
         }
 

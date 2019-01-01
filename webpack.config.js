@@ -18,6 +18,10 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
     .addEntry('semantic', './vendor/semantic/ui/dist/semantic.js')
+    .addEntry('semantic-visibility', './vendor/semantic/ui/dist/components/visibility.js')
+    .addEntry('semantic-sidebar', './vendor/semantic/ui/dist/components/sidebar.js')
+    .addEntry('semantic-transition', './vendor/semantic/ui/dist/components/transition.js')
+    //.addEntry('foundation', './vendor/zurb/foundation/js/entries/foundation.js')
     .addEntry('app', './assets/js/app.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
@@ -42,7 +46,7 @@ Encore
     //.enableTypeScriptLoader()
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 ;
 
 module.exports = Encore.getWebpackConfig();

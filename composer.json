@@ -26,7 +26,8 @@
         "symfony/validator": "*",
         "symfony/web-link": "*",
         "symfony/webpack-encore-pack": "^1.0",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+        "zurb/foundation": "^6.5"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",

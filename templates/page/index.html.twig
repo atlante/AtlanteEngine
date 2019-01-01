@@ -111,12 +111,9 @@
 
 {% block javascripts %}
     <script>
-        $(document)
-            .ready(function () {
-
+        $(document).ready(function () {
                 // fix menu when passed
-                $('.masthead')
-                    .visibility({
+                $('.masthead').visibility({
                         once: false,
                         onBottomPassed: function () {
                             $('.fixed.menu').transition('fade in');
@@ -124,16 +121,10 @@
                         onBottomPassedReverse: function () {
                             $('.fixed.menu').transition('fade out');
                         }
-                    })
-                ;
-
+                    });
                 // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                    .sidebar('attach events', '.toc.item')
-                ;
-
-            })
-        ;
+                $('.ui.sidebar').sidebar('attach events', '.toc.item');
+            });
     </script>
 {% endblock %}
 
@@ -142,9 +133,6 @@
     <div class="ui large top fixed hidden menu">
         <div class="ui container">
             <a class="active item">Home</a>
-            <a class="item">Work</a>
-            <a class="item">Company</a>
-            <a class="item">Careers</a>
             <div class="right menu">
                 <div class="item">
                     <a class="ui button" href="{{ path('user_login') }}">Log in</a>
@@ -161,6 +149,9 @@
         <a class="active item" href="{{ path('home') }}">Home</a>
         <!--a class="item" href="{{ path('player') }}">Character</a>
         <a class="item" href="{{ path('home') }}">Scene</a-->
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="item" href="{{ path('easyadmin') }}">Admin</a>
+        {% endif %}
         <a class="item" href="{{ path('user_login') }}">Login</a>
         <a class="item" href="{{ path('user_signup') }}">Signup</a>
     </div>
@@ -176,11 +167,18 @@
                         <i class="sidebar icon"></i>
                     </a>
                     <a class="active item" href="{{ path('home') }}">Home</a>
-                    <a class="item" href="{{ path('player') }}">Character</a>
-                    <a class="item" href="{{ path('home') }}">Scene</a>
+                    <!--a class="item" href="{{ path('player') }}">Character</a>
+                    <a class="item" href="{{ path('home') }}">Scene</a-->
                     <div class="right item">
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="ui inverted button" href="{{ path('easyadmin') }}">Admin</a>
+                        {% endif %}
+                        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                            <a class="ui inverted button" href="{{ path('user_logout') }}">Log out</a>
+                        {% else %}
                         <a class="ui inverted button" href="{{ path('user_login') }}">Log in</a>
                         <a class="ui inverted button" href="{{ path('user_signup') }}">Sign Up</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -207,7 +205,7 @@
                             bioengineered.</p>
                     </div>
                     <div class="six wide right floated column">
-                        <img src="assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
+                        <img src="https://semantic-ui.com/examples/assets/images/wireframe/white-image.png" class="ui large bordered rounded image">
                     </div>
                 </div>
                 <div class="row">
@@ -229,7 +227,7 @@
                     <div class="column">
                         <h3>"I shouldn't have gone with their competitor."</h3>
                         <p>
-                            <img src="assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun
+                            <img src="https://semantic-ui.com/examples/assets/images/avatar/nan.jpg" class="ui avatar image"> <b>Nan</b> Chief Fun
                             Officer Acme Toys
                         </p>
                     </div>

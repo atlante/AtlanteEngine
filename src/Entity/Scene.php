@@ -24,7 +24,7 @@ class Scene
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=600, nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      */
     private $description;
 

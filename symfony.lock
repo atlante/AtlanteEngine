@@ -448,5 +448,8 @@
     },
     "zendframework/zend-eventmanager": {
         "version": "3.2.1"
+    },
+    "zurb/foundation": {
+        "version": "v6.5.1"
     }
 }

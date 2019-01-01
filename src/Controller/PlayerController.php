@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Path;
 use App\Entity\Scene;
+use App\Entity\User;
 use App\Repository\PlayerRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,7 +29,15 @@ class PlayerController extends AbstractController
      */
     public function index(): Response
     {
-        $players = $this->repository->findAll();
+        // usually you'll want to make sure the user is authenticated first
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        // returns your User object, or null if the user is not authenticated
+        // use inline documentation to tell your editor your exact User class
+        /** @var \App\Entity\User $user */
+        $user = $this->getUser();
+
+        $players = $user->getPlayers();
         return $this->render('player/index.html.twig', ['players' => $players]);
     }
 

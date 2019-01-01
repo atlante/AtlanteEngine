@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -36,6 +38,21 @@ class User implements UserInterface
      * @ORM\Column(type="array")
      */
     private $roles = [];
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Player", mappedBy="user")
+     */
+    private $players;
+
+    public function __construct()
+    {
+        $this->players = new ArrayCollection();
+    }
+
+    public function __toString(): string
+    {
+        return $this->username;
+    }
 
     public function getId(): ?int
     {
@@ -141,5 +158,34 @@ class User implements UserInterface
     public function unserialize($serialized): void
     {
         [$this->id, $this->email, $this->password] = unserialize($serialized, ['allowed_classes' => false]);
+    }
+
+
+    /**
+     * @return Collection|Player[]
+     */
+    public function getPlayers(): Collection
+    {
+        return $this->players;
+    }
+
+    public function addPlayer(Player $player): self
+    {
+        if (!$this->players->contains($player)) {
+            $this->players[] = $player;
+            $player->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removePlayer(Player $player): self
+    {
+        if ($this->players->contains($player)) {
+            $this->players->removeElement($player);
+            $player->removeUser($this);
+        }
+
+        return $this;
     }
 }
