@@ -4,7 +4,7 @@ Codage d'un moteur de jeu de rôle textuel et asynchrone par navigateur.
 
 Projet d'A.B.Chatignon et Agentcobra (sous licence GPLv2) avec les graphismes de Kurotashi
 
-utilisant Symfony4 : le framework de développement rapide php (Licence MIT)
+utilisant Symfony4 : High Performance PHP Framework for Web Development ([Licence MIT](https://symfony.com/doc/master/contributing/code/license.html))
 
 Convention de codage : [PSR-2](php-fig.org/psr/psr-2)
 
