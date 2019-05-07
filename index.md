@@ -19,7 +19,7 @@ note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir 
 
 Atlante Engine est un moteur gratuit et libre permettant de lancer votre propre jeu de rôle sur internet.
 
-Vous pouvez le télécharger à l'adresse suivante : https://github.com/agentcobra/atlante/, ensuite, libre à vous de le modifier pour correspondre a vos goûts.
+Vous pouvez le télécharger à l'adresse suivante : https://github.com/agentcobra/atlante/ , ensuite, libre à vous de le modifier pour correspondre a vos goûts.
 
 Ce programme a entierement été programmé par Agentcobra en utilisant le framework Symfony4 en réutilisant les idées de Talesta4 qui été programmé par Leym.
 
@@ -27,7 +27,17 @@ Ce programme n'éxisterai pas sans l'aide de A.B.Chatignon en dirigeant l'équip
 
 Les graphismes livrés avec le jeu sont tous l'oeuvre de Kurotashi, les droits de ses images lui appartiennent evidemment et seul leur usage dans le cadre du fonctionnement d'un moteur de type Atlante est autorisé. Pour tout autre usage, merci de le contacter par mail.
 
-**This work is licensed under GPLv2.**
+**This work is licensed under GPLv2.***
+
+## Histoire du Jeu de rôle asynchrone par navigateur
+
+Le premier avril 1999, Amano crée un petit programme qui devint le jeu https://www.jdr-odyssee.net .
+
+Ce jeu inspira les moteurs Talesta dont la quatrième version nous a inspiré, malheureusement Talesta n'est plus mis à jour et sa communauté n'est plus.
+
+Cependant, le moteur Alandara, produit par Kaelhan et se basant sur Talesta a vu naître les jeux https://jdr.alandara.net en février 2015 et https://traque.alandara.net en 2018.
+
+
 
 ### L'équipe de développement
 
