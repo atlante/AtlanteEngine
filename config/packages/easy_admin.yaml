@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: '<img src="https://symfony.com/logos/symfony_white_01.png" />'
+    site_name: '<img src="/atlante-admin-logo.png" />'
     disabled_actions: ['delete']
     design:
         brand_color: '#1ABC9C'
@@ -7,6 +7,8 @@ easy_admin:
         # List the entity class name you want to manage
         Path:
             class: App\Entity\Path
+            list:
+                fields: ['id', 'name', 'description', 'cost', 'cardinal','start', 'end']
         Player:
             class: App\Entity\Player
             help: 'Global message displayed in all views'
