@@ -1,4 +1,4 @@
-#AtlanteEngine
+# AtlanteEngine
 
 [![Join the chat at https://gitter.im/atlante/AtlanteEngine](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/atlante/AtlanteEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 Codage d'un moteur de jeu de rôle textuel et asynchrone par navigateur.
@@ -9,17 +9,15 @@ utilisant Symfony v4 : le framework de développement rapide php (Licence MIT)
 
 Convention de codage : PSR-2 (https://www.php-fig.org/psr/psr-2/)
 
-##Annuaire des sites utilisant AtlanteEngine
-![QRcode](http://i.imgur.com/UsuH3Mt.png "QRcode")
-
-~~[Sites utilisant le moteur atlante](http://atlante-engine.fr)~~
+## Annuaire des sites utilisant AtlanteEngine
+[Sites utilisant le moteur atlante](http://atlante-engine.fr)
 
 note: Le code sera disponible quand le moteur sera un minima fonctionnel. (voir les milestones)
 * * *
 
-<iframe src="https://discordapp.com/widget?id=87217514903269376&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+[Discord Widget](https://discordapp.com/widget?id=87217514903269376&theme=dark)
 
-##À propos
+## À propos
 
 Atlante Engine est un moteur gratuit et libre permettant de lancer votre propre jeu de rôle sur internet.
 
@@ -33,7 +31,7 @@ Les graphismes livrés avec le jeu sont tous l'oeuvre de Kuro, les droits de ses
 
 **This work is licensed under GPLv2.**
 
-###L'équipe de développement
+### L'équipe de développement
 |  | Role |
 |--------|--------|
 | Agentcobra | Le codeur |
